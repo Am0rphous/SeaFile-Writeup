@@ -217,5 +217,6 @@ I tried these without luck
 1. https://github.com/awant/seafile_data_recovery - didn't work in particular
 2. [https://git.deuxfleurs.fr/quentin/seafile_recovery](https://git.deuxfleurs.fr/quentin/seafile_recovery) - Strugled installing golang and downloading the shit
 
-The solution was this repo: [https://gist.github.com/JFWenisch/50c48bd4706e6762ef531b7b3041ad1c](https://gist.github.com/JFWenisch/50c48bd4706e6762ef531b7b3041ad1c). I followed the instructions to point and the files got recovered.
-I follow this 
+### The solution was
+- This gist repo: [https://gist.github.com/JFWenisch/50c48bd4706e6762ef531b7b3041ad1c](https://gist.github.com/JFWenisch/50c48bd4706e6762ef531b7b3041ad1c). I followed the instructions to point and the files got recovered. Yay!
+
