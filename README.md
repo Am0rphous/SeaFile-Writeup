@@ -3,14 +3,23 @@
 I wanted to share some notes after strugling to setting up Seafile as a selfhosted Google Drive alternative. Selfhosting is nice if you value privacy of your files, and you want full control over your data. I landed on Seafile because it had a nice web GUI, had a free community version, and could be selfhosted in e.g. Docker.
 
 In the end I didn't get to upload or download files because of strange errors such as:
-1. "Network error" when dragging files into the web site for upload, and when viewing files I got the message `Sorry, but the requested page could not be found.`
-2. Error in the `seafile` container when connecting to the `seafile-mysql` container. The error was `Waiting for mysql server to be ready: %s (2003, "Can't connect to MySQL server on 'db' ([Errno 111] Connection refused)")`
-3. Database error in the `seafile-mysql` container: `6 [Warning] Aborted connection 6 to db: 'seahub_db' user: 'seafile' host: '172.18.0.4' (Got an error reading communication packets)`
+1. "Network error" when dragging files into the web site for upload, and when viewing files I got the message
+````
+Sorry, but the requested page could not be found.
+````
+3. Error in the `seafile` container when connecting to the `seafile-mysql` container. The error was
+````
+Waiting for mysql server to be ready: %s (2003, "Can't connect to MySQL server on 'db' ([Errno 111] Connection refused)")
+````
+5. Database error in the `seafile-mysql` container:
+````
+6 [Warning] Aborted connection 6 to db: 'seahub_db' user: 'seafile' host: '172.18.0.4' (Got an error reading communication packets)
+````
 
-I don't know what's wrong, and I might look into it later out of curiosity. Here is my setup. I'm particulary happy i got the Nginx proxy in front to work. The purpose was to encrypt traffic.
+I'm not sure what's wrong, and I might look into it later out of curiosity. Here is my setup. I'm particulary happy i got the Nginx proxy in front to work. The purpose was to encrypt traffic.
 
 ### Nginx proxy and certificate setup
-Commands used
+Commands that might be useful
 ````
 rm /etc/nginx/sites-enabled/default && rm /etc/nginx/sites-available/default
 touch /etc/nginx/sites-available/seafile.conf
